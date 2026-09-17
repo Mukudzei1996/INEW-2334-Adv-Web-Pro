@@ -1,0 +1,154 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "Lab-02-Testing",
+  "collectionId": "8c9d2e3f-5a67-4b89-ac12-3d4e5f6a7b80",
+  "dateExported": "2026-09-16T19:00:00.000Z",
+  "version": "1.2",
+  "folders": [],
+  "requests": [
+    {
+      "_id": "11111111-1111-4111-8111-111111111111",
+      "colId": "8c9d2e3f-5a67-4b89-ac12-3d4e5f6a7b80",
+      "containerId": "",
+      "name": "GET All Tasks - High Priority",
+      "url": "http://127.0.0.1:5000/api/tasks?priority=high",
+      "method": "GET",
+      "sortNum": 5000,
+      "created": "2026-09-16T19:00:00.000Z",
+      "modified": "2026-09-16T19:00:00.000Z",
+      "headers": [],
+      "params": [
+        {
+          "name": "priority",
+          "value": "high",
+          "isPath": false
+        }
+      ],
+      "tests": []
+    },
+    {
+      "_id": "22222222-2222-4222-8222-222222222222",
+      "colId": "8c9d2e3f-5a67-4b89-ac12-3d4e5f6a7b80",
+      "containerId": "",
+      "name": "POST Create Task",
+      "url": "http://127.0.0.1:5000/api/tasks",
+      "method": "POST",
+      "sortNum": 10000,
+      "created": "2026-09-16T19:00:00.000Z",
+      "modified": "2026-09-16T19:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"Test API Validation\",\n  \"priority\": \"high\",\n  \"completed\": false,\n  \"due_date\": \"2026-09-30\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "33333333-3333-4333-8333-333333333333",
+      "colId": "8c9d2e3f-5a67-4b89-ac12-3d4e5f6a7b80",
+      "containerId": "",
+      "name": "POST Missing Priority - 400",
+      "url": "http://127.0.0.1:5000/api/tasks",
+      "method": "POST",
+      "sortNum": 15000,
+      "created": "2026-09-16T19:00:00.000Z",
+      "modified": "2026-09-16T19:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"Missing Priority Test\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "44444444-4444-4444-8444-444444444444",
+      "colId": "8c9d2e3f-5a67-4b89-ac12-3d4e5f6a7b80",
+      "containerId": "",
+      "name": "POST Invalid Priority - 422",
+      "url": "http://127.0.0.1:5000/api/tasks",
+      "method": "POST",
+      "sortNum": 20000,
+      "created": "2026-09-16T19:00:00.000Z",
+      "modified": "2026-09-16T19:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"Invalid Priority Test\",\n  \"priority\": \"urgent\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "55555555-5555-4555-8555-555555555555",
+      "colId": "8c9d2e3f-5a67-4b89-ac12-3d4e5f6a7b80",
+      "containerId": "",
+      "name": "PUT Update Task",
+      "url": "http://127.0.0.1:5000/api/tasks/4",
+      "method": "PUT",
+      "sortNum": 25000,
+      "created": "2026-09-16T19:00:00.000Z",
+      "modified": "2026-09-16T19:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"Updated API Validation Task\",\n  \"priority\": \"medium\",\n  \"completed\": true,\n  \"due_date\": \"2026-10-01\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "66666666-6666-4666-8666-666666666666",
+      "colId": "8c9d2e3f-5a67-4b89-ac12-3d4e5f6a7b80",
+      "containerId": "",
+      "name": "DELETE Task",
+      "url": "http://127.0.0.1:5000/api/tasks/4",
+      "method": "DELETE",
+      "sortNum": 30000,
+      "created": "2026-09-16T19:00:00.000Z",
+      "modified": "2026-09-16T19:00:00.000Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "77777777-7777-4777-8777-777777777777",
+      "colId": "8c9d2e3f-5a67-4b89-ac12-3d4e5f6a7b80",
+      "containerId": "",
+      "name": "GET Deleted Task - 404",
+      "url": "http://127.0.0.1:5000/api/tasks/4",
+      "method": "GET",
+      "sortNum": 35000,
+      "created": "2026-09-16T19:00:00.000Z",
+      "modified": "2026-09-16T19:00:00.000Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    }
+  ]
+}
