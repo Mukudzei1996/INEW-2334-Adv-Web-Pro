@@ -1,0 +1,117 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Lab-03-ORM",
+  "dateExported": "2026-09-23T00:00:00.000Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "POST Create Department",
+      "method": "POST",
+      "url": "http://127.0.0.1:5000/api/departments",
+      "headers": [],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"name\": \"Information Technology\",\n  \"location\": \"Dallas\"\n}"
+      }
+    },
+    {
+      "name": "POST Duplicate Department - 409",
+      "method": "POST",
+      "url": "http://127.0.0.1:5000/api/departments",
+      "headers": [],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"name\": \"Information Technology\",\n  \"location\": \"Dallas\"\n}"
+      }
+    },
+    {
+      "name": "GET Departments with Employees",
+      "method": "GET",
+      "url": "http://127.0.0.1:5000/api/departments",
+      "headers": [],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "none",
+        "raw": ""
+      }
+    },
+    {
+      "name": "POST Add Employee",
+      "method": "POST",
+      "url": "http://127.0.0.1:5000/api/departments/1/employees",
+      "headers": [],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"name\": \"John Smith\",\n  \"email\": \"john.smith@example.com\",\n  \"role\": \"Software Developer\"\n}"
+      }
+    },
+    {
+      "name": "POST Missing Employee Fields - 400",
+      "method": "POST",
+      "url": "http://127.0.0.1:5000/api/departments/1/employees",
+      "headers": [],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"name\": \"Jane Doe\"\n}"
+      }
+    },
+    {
+      "name": "POST Duplicate Employee Email - 409",
+      "method": "POST",
+      "url": "http://127.0.0.1:5000/api/departments/1/employees",
+      "headers": [],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"name\": \"Another John\",\n  \"email\": \"john.smith@example.com\",\n  \"role\": \"Manager\"\n}"
+      }
+    },
+    {
+      "name": "POST Nonexistent Department - 404",
+      "method": "POST",
+      "url": "http://127.0.0.1:5000/api/departments/999/employees",
+      "headers": [],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"name\": \"Jane Doe\",\n  \"email\": \"jane.doe@example.com\",\n  \"role\": \"Designer\"\n}"
+      }
+    },
+    {
+      "name": "DELETE Department",
+      "method": "DELETE",
+      "url": "http://127.0.0.1:5000/api/departments/1",
+      "headers": [],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "none",
+        "raw": ""
+      }
+    },
+    {
+      "name": "GET Verify Deletion",
+      "method": "GET",
+      "url": "http://127.0.0.1:5000/api/departments",
+      "headers": [],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "none",
+        "raw": ""
+      }
+    }
+  ]
+}
