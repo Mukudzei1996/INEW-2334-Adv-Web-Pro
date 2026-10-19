@@ -1,0 +1,299 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Midterm API",
+    "dateExported": "2026-10-19T00:00:00.000Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "mid01",
+            "colId": "midterm",
+            "name": "GET All Categories",
+            "url": "http://127.0.0.1:5000/api/v1/categories",
+            "method": "GET",
+            "sortNum": 1,
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "none",
+                "raw": "",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid02",
+            "colId": "midterm",
+            "name": "GET Single Category",
+            "url": "http://127.0.0.1:5000/api/v1/categories/1",
+            "method": "GET",
+            "sortNum": 2,
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "none",
+                "raw": "",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid03",
+            "colId": "midterm",
+            "name": "POST Create Category",
+            "url": "http://127.0.0.1:5000/api/v1/categories",
+            "method": "POST",
+            "sortNum": 3,
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"name\":\"Test Category\",\"description\":\"Collection test category\"}",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid04",
+            "colId": "midterm",
+            "name": "POST Duplicate Category - 409",
+            "url": "http://127.0.0.1:5000/api/v1/categories",
+            "method": "POST",
+            "sortNum": 4,
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"name\":\"Electronics\",\"description\":\"Duplicate test\"}",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid05",
+            "colId": "midterm",
+            "name": "PUT Update Category",
+            "url": "http://127.0.0.1:5000/api/v1/categories/1",
+            "method": "PUT",
+            "sortNum": 5,
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"name\":\"Electronics Updated\",\"description\":\"Updated category description\"}",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid06",
+            "colId": "midterm",
+            "name": "GET All Items",
+            "url": "http://127.0.0.1:5000/api/v1/items",
+            "method": "GET",
+            "sortNum": 6,
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "none",
+                "raw": "",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid07",
+            "colId": "midterm",
+            "name": "GET Items Filtered by Category",
+            "url": "http://127.0.0.1:5000/api/v1/items?category_id=1",
+            "method": "GET",
+            "sortNum": 7,
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "none",
+                "raw": "",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid08",
+            "colId": "midterm",
+            "name": "GET Items Filtered by Status",
+            "url": "http://127.0.0.1:5000/api/v1/items?status=out_of_stock",
+            "method": "GET",
+            "sortNum": 8,
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "none",
+                "raw": "",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid09",
+            "colId": "midterm",
+            "name": "GET Single Item",
+            "url": "http://127.0.0.1:5000/api/v1/items/1",
+            "method": "GET",
+            "sortNum": 9,
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "none",
+                "raw": "",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid10",
+            "colId": "midterm",
+            "name": "POST Create Item",
+            "url": "http://127.0.0.1:5000/api/v1/items",
+            "method": "POST",
+            "sortNum": 10,
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"name\":\"Collection Test Item\",\"price\":19.99,\"stock\":10,\"status\":\"in_stock\",\"category_id\":1}",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid11",
+            "colId": "midterm",
+            "name": "POST Item Missing Category - 400",
+            "url": "http://127.0.0.1:5000/api/v1/items",
+            "method": "POST",
+            "sortNum": 11,
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"name\":\"Invalid Test Item\",\"price\":10,\"stock\":5}",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid12",
+            "colId": "midterm",
+            "name": "POST Item Negative Price - 422",
+            "url": "http://127.0.0.1:5000/api/v1/items",
+            "method": "POST",
+            "sortNum": 12,
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"name\":\"Invalid Price Item\",\"price\":-10,\"stock\":5,\"category_id\":1}",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid13",
+            "colId": "midterm",
+            "name": "PUT Update Item",
+            "url": "http://127.0.0.1:5000/api/v1/items/1",
+            "method": "PUT",
+            "sortNum": 13,
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"name\":\"Mechanical Keyboard Updated\",\"price\":94.99,\"stock\":12,\"status\":\"in_stock\",\"category_id\":1}",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid14",
+            "colId": "midterm",
+            "name": "DELETE Item",
+            "url": "http://127.0.0.1:5000/api/v1/items/6",
+            "method": "DELETE",
+            "sortNum": 14,
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "none",
+                "raw": "",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid15",
+            "colId": "midterm",
+            "name": "GET Missing Category - 404",
+            "url": "http://127.0.0.1:5000/api/v1/categories/999",
+            "method": "GET",
+            "sortNum": 15,
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "none",
+                "raw": "",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid16",
+            "colId": "midterm",
+            "name": "GET Missing Item - 404",
+            "url": "http://127.0.0.1:5000/api/v1/items/999",
+            "method": "GET",
+            "sortNum": 16,
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "none",
+                "raw": "",
+                "form": []
+            }
+        },
+        {
+            "_id": "mid17",
+            "colId": "midterm",
+            "name": "DELETE Category",
+            "url": "http://127.0.0.1:5000/api/v1/categories/3",
+            "method": "DELETE",
+            "sortNum": 17,
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "none",
+                "raw": "",
+                "form": []
+            }
+        }
+    ]
+}
